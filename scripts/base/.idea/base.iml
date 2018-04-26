@@ -9,6 +9,7 @@
     <content url="file://$MODULE_DIR$/../entity_defs" />
     <content url="file://$MODULE_DIR$/../interface" />
     <content url="file://$MODULE_DIR$/../server_common" />
+    <content url="file://$MODULE_DIR$/../user_type" />
     <orderEntry type="jdk" jdkName="Python 3.4 (base)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

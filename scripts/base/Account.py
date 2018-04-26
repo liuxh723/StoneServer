@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import KBEngine
 from KBEDebug import *
+from CARD_INFO import TCardInfo
+from CARD_INFO import TCardList
 import random
 
 class Account(KBEngine.Proxy):
@@ -90,19 +92,31 @@ class Account(KBEngine.Proxy):
 		self.CardList = self.CardList
 
 	def AddCard(self, cardID):
-		for i in range(len(self.CardList)):
-			if self.CardList[i]["CardID"] == cardID:
-				self.CardList[i]["CardNum"] += 1
-				return
+		if cardID in self.CardList:
+			self.CardList[cardID][1] += 1
+			return
 		dic = {"CardID": cardID, "CardNum": 1, }
-		self.CardList.append(dic)
+		info = TCardInfo()
+		info.extend([cardID,1])
+		self.CardList[len(self.CardList)] =  info
 		DEBUG_MSG("Account[%i].CardList:%s" % (self.id, len(self.CardList)))
 
 
 
-	def reqEditCardGroup(self,CardGroupInfo):
-		DEBUG_MSG("Account[%i].reqEditCardGroup" % (self.id,))
-		self.CardGroupList = CardGroupInfo
+	def reqEditCardGroup(self,index,name,rolytype,list):
+		DEBUG_MSG("Account[%i].reqEditCardGroup" % (self.id))
+		if(index > len(self.CardGroupList )):
+			return
+		if(index == -1):
+
+			dic = {"Name": name, "RoleType": rolytype,"CardList": list }
+			self.CardGroupList.append(dic)
+			return
+
+		self.CardGroupList[index]["Name"] = name
+		self.CardGroupList[index]["RoleType"] = rolytype
+		self.CardGroupList[index]["CardList"] = list
+
 		
 
 	def reqDelCardGroup(self,index):

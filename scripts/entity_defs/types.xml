@@ -1,8 +1,8 @@
 <root>
     <CARDID>	UINT64 </CARDID>
     <UID>	UINT64 </UID>
-    <CARD_INFO>
-         FIXED_DICT
+    <CARD_INFO>  FIXED_DICT
+        <implementedBy>CARD_INFO.card_info_inst</implementedBy>
         <Properties>
             <CardID>
                 <Type>CARDID</Type>
@@ -13,10 +13,22 @@
         </Properties>
     </CARD_INFO>
     <OPEN_PACK_RUL> ARRAY <of> CARDID </of></OPEN_PACK_RUL>
-    <CARD_LIST>
-        ARRAY <of> CARD_INFO </of>
-    </CARD_LIST>
-
+	<CARD_LIST>	FIXED_DICT
+		<implementedBy>CARD_INFO.card_list_inst</implementedBy>
+		<Properties>
+			<values>
+				<Type>	ARRAY <of> CARD_INFO </of>	</Type>
+			</values>
+		</Properties>
+	</CARD_LIST>
+    <GROUP_CARD_LIST>FIXED_DICT
+        <implementedBy>CARD_INFO.group_card_list_inst</implementedBy>
+		<Properties>
+			<values>
+				<Type>	ARRAY <of> CARDID </of>	</Type>
+			</values>
+		</Properties>
+    </GROUP_CARD_LIST>
     <CARDGROUP_INFO>
         FIXED_DICT
         <Properties>
@@ -27,7 +39,7 @@
                 <Type>UINT8</Type>
             </RoleType>
             <CardList>
-                <Type>CARD_LIST</Type>
+                <Type>GROUP_CARD_LIST</Type>
             </CardList>
         </Properties>
     </CARDGROUP_INFO>

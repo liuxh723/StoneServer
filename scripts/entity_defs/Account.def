@@ -58,8 +58,11 @@
         <reqOpenKabao>
          <Exposed />
         </reqOpenKabao>
-         <reqEditCardGroup>
-        <Arg>CARDGROUP_INFO</Arg>
+        <reqEditCardGroup>
+        <Arg>INT8</Arg>
+        <Arg>UNICODE</Arg>
+        <Arg>UINT8</Arg>
+        <Arg>GROUP_CARD_LIST</Arg>
         <Exposed />
         </reqEditCardGroup>
           <reqDelCardGroup>
