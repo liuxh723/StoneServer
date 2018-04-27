@@ -2,3 +2,4 @@ venv
 logs
 .idea
 *.log
+scripts/base/.idea/workspace.xml
