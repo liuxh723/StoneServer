@@ -3,3 +3,6 @@ logs
 .idea
 *.log
 scripts/base/.idea/workspace.xml
+*.pyc
+*.pyc
+scripts/base/.idea/workspace.xml
