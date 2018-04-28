@@ -5,4 +5,7 @@ logs
 scripts/base/.idea/workspace.xml
 *.pyc
 *.pyc
+<<<<<<< HEAD
 scripts/base/.idea/workspace.xml
+=======
+>>>>>>> 14524cb07fbad30aa2e73b15cbf199200aa47aa5
