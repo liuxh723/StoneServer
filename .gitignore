@@ -1,6 +1,7 @@
 venv
 logs
 .idea
+__pycache__
 *.log
 scripts/base/.idea/workspace.xml
 *.pyc
@@ -9,3 +10,4 @@ scripts/base/.idea/workspace.xml
 scripts/base/.idea/workspace.xml
 =======
 >>>>>>> 14524cb07fbad30aa2e73b15cbf199200aa47aa5
+*.pyc
