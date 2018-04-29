@@ -2,9 +2,12 @@ venv
 logs
 .idea
 __pycache__
+__pycache__/
+.idea/
+.idea
+logs/
 *.log
 scripts/base/.idea/workspace.xml
-*.pyc
 *.pyc
 <<<<<<< HEAD
 scripts/base/.idea/workspace.xml
