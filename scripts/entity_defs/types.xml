@@ -24,7 +24,7 @@
     <GROUP_CARD_LIST>FIXED_DICT
 		<Properties>
 			<values>
-				<Type>	ARRAY <of> CARDID </of>	</Type>
+				<Type>	ARRAY <of> CARD_INFO </of>	</Type>
 			</values>
 		</Properties>
     </GROUP_CARD_LIST>
