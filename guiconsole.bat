@@ -1,4 +1,6 @@
 @echo off
+taskkill /f /t /im guiconsole.exe
+
 set curpath=%~dp0
 
 cd ..

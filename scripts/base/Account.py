@@ -66,6 +66,7 @@ class Account(KBEngine.Proxy):
 		客户端对应实体已经销毁
 		"""
 		DEBUG_MSG("Account[%i].onClientDeath:" % self.id)
+		KBEngine.globalData["Halls"].reqRemoveMatcher(self)
 		self.destroy()
 
 	def reqBuyKabao(self,buyNum):
@@ -119,14 +120,20 @@ class Account(KBEngine.Proxy):
 		self.CardGroupList[index]["CardList"] = list
 		self.CardGroupList = self.CardGroupList
 
-		
-
 	def reqDelCardGroup(self,index):
 		DEBUG_MSG("Account[%i].reqDelCardGroup:%s" % (self.id, index))
 		if index > len(self.CardGroupList)-1:
 			return
 		del self.CardGroupList[index]
 		self.CardGroupList = self.CardGroupList
+
+	def reqStartMatch(self,index):
+		DEBUG_MSG("Account[%i].reqStartMatch:%s" % (self.id, index))
+		KBEngine.globalData["Halls"].reqAddMatcher(self)
+
+	def reqStopMatch(self):
+		DEBUG_MSG("Account[%i].reqStopMatch!" % (self.id,))
+		KBEngine.globalData["Halls"].reqRemoveMatcher(self)
 
 	def reqCardList(self):
 		DEBUG_MSG("Account[%i].reqCardList!" % (self.id))

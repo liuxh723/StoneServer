@@ -69,6 +69,13 @@
         <Arg>INT8</Arg>
         <Exposed />
         </reqDelCardGroup>
+        <reqStartMatch>
+        <Arg>INT8</Arg>
+        <Exposed />
+        </reqStartMatch>
+        <reqStopMatch>
+          <Exposed />
+        </reqStopMatch>
         <reqCardList>
           <Exposed />
         </reqCardList>
