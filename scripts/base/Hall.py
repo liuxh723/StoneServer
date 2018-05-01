@@ -33,7 +33,7 @@ class Hall(KBEngine.Entity):
             players = [self.OnMatchingPlayer[0],self.OnMatchingPlayer[1]]
             self.MatchSuccess(players)
             del self.OnMatchingPlayer[0]
-            del self.OnMatchingPlayer[1]
+            del self.OnMatchingPlayer[0]
 
     def MatchSuccess(self,players):
         DEBUG_MSG("Hall: Account[%i].MatchSuccess player")
