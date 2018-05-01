@@ -22,7 +22,6 @@
 		</Properties>
 	</CARD_LIST>
     <GROUP_CARD_LIST>FIXED_DICT
-        <implementedBy>CARD_INFO.group_card_list_inst</implementedBy>
 		<Properties>
 			<values>
 				<Type>	ARRAY <of> CARDID </of>	</Type>

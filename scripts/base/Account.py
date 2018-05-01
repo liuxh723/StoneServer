@@ -111,11 +111,13 @@ class Account(KBEngine.Proxy):
 
 			dic = {"Name": name, "RoleType": rolytype,"CardList": list }
 			self.CardGroupList.append(dic)
+			self.CardGroupList = self.CardGroupList
 			return
 
 		self.CardGroupList[index]["Name"] = name
 		self.CardGroupList[index]["RoleType"] = rolytype
 		self.CardGroupList[index]["CardList"] = list
+		self.CardGroupList = self.CardGroupList
 
 		
 
@@ -124,6 +126,7 @@ class Account(KBEngine.Proxy):
 		if index > len(self.CardGroupList)-1:
 			return
 		del self.CardGroupList[index]
+		self.CardGroupList = self.CardGroupList
 
 	def reqCardList(self):
 		DEBUG_MSG("Account[%i].reqCardList!" % (self.id))
