@@ -32,7 +32,7 @@ class Hall(KBEngine.Entity):
         if(len( self.OnMatchingPlayer) > 1):
             players = [self.OnMatchingPlayer[0],self.OnMatchingPlayer[1]]
             self.MatchSuccess(players)
-            del self.OnMatchingPlayer[0]
+            del self.OnMatchingPlayer[1]
             del self.OnMatchingPlayer[0]
 
     def MatchSuccess(self,players):
