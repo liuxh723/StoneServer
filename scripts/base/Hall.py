@@ -36,7 +36,13 @@ class Hall(KBEngine.Entity):
             del self.OnMatchingPlayer[0]
 
     def MatchSuccess(self,players):
-        DEBUG_MSG("Hall: Account[%i].MatchSuccess player")
+        DEBUG_MSG("Hall: MatchSuccess player")
+        prarms = {
+            "Player0":players[0],
+            "Player1":players[1]
+        }
+        Battlefield  = KBEngine.createEntityAnywhere("Battlefield",prarms)
+
 
     def onTimer(self, id, userArg):
         """

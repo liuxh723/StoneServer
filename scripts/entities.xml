@@ -8,5 +8,7 @@
 	<!-- <Avatar/> -->
 	<Account hasClient="true"></Account><!-- <Account hasCell="true" hasBase="true" hasClient="true"></Account> -->
 	<Hall/>
+	<Battlefield></Battlefield>
+	<Avatar hsClient = "true"></Avatar>
 	<!--<CardList hasClient="true"></CardList>-->
 </root>

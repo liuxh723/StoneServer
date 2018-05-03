@@ -10,6 +10,7 @@ class Account(KBEngine.Proxy):
 		self.Gold = 999999
 		#self.randomInitKZ()
 		KBEngine.Proxy.__init__(self)
+		self.chooseCG = -1;
 
 	def randomInitKZ(self):
 		ls = []
@@ -130,6 +131,7 @@ class Account(KBEngine.Proxy):
 	def reqStartMatch(self,index):
 		DEBUG_MSG("Account[%i].reqStartMatch:%s" % (self.id, index))
 		KBEngine.globalData["Halls"].reqAddMatcher(self)
+		self.chooseCG = index
 
 	def reqStopMatch(self):
 		DEBUG_MSG("Account[%i].reqStopMatch!" % (self.id,))
@@ -138,6 +140,17 @@ class Account(KBEngine.Proxy):
 	def reqCardList(self):
 		DEBUG_MSG("Account[%i].reqCardList!" % (self.id))
 		self.client.onReqCardList(self.CardList,self.CardGroupList)
+
+	def onMatchSuccess(self,Battlefield):
+		DEBUG_MSG("Account[%i].onMatchSuccess！ Battlefield:[%s]" % (self.id,Battlefield.id))
+		prarms = {
+			"Battlefield":Battlefield,
+			"Account":self,
+			"NameA": self.Name,
+			"RoleType":self.CardGroupList[self.chooseCG]["RoleType"],
+			"CardList": self.CardGroupList[self.chooseCG]["CardList"],
+		}
+		self.Avatar = KBEngine.createEntityAnywhere("Avatar",prarms)
 
 
 

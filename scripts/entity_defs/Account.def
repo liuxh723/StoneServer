@@ -79,6 +79,9 @@
         <reqCardList>
           <Exposed />
         </reqCardList>
+		<onMatchSuccess>
+			<Arg>ENTITYCALL</Arg>
+		</onMatchSuccess>
 	</BaseMethods>
 
 	<CellMethods>
