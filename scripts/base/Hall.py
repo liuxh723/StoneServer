@@ -28,7 +28,7 @@ class Hall(KBEngine.Entity):
 
 
     def Match(self):
-        DEBUG_MSG("Hall:Matchplayer num[%s]"% len(self.OnMatchingPlayer))
+        #DEBUG_MSG("Hall:Matchplayer num[%s]"% len(self.OnMatchingPlayer))
         if(len( self.OnMatchingPlayer) > 1):
             players = [self.OnMatchingPlayer[0],self.OnMatchingPlayer[1]]
             self.MatchSuccess(players)
