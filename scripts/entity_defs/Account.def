@@ -34,13 +34,17 @@
 	</Properties>
 
 	<ClientMethods>
-	<onOpenPack>
-	<Arg>OPEN_PACK_RUL</Arg>
-	</onOpenPack>
-    <onReqCardList>
-	<Arg>CARD_LIST</Arg>
-	<Arg>CARDGROUP_INFO_LIST</Arg>
-	</onReqCardList>
+		<onOpenPack>
+		<Arg>OPEN_PACK_RUL</Arg>
+		</onOpenPack>
+		<onReqCardList>
+		<Arg>CARD_LIST</Arg>
+		<Arg>CARDGROUP_INFO_LIST</Arg>
+		</onReqCardList>
+		<onEnterBattlefield>
+
+		</onEnterBattlefield>
+
 	</ClientMethods>
 	<BaseMethods>
         <reqChangeName>
@@ -81,7 +85,11 @@
         </reqCardList>
 		<onMatchSuccess>
 			<Arg>ENTITYCALL</Arg>
+			<Arg>INT32</Arg>
 		</onMatchSuccess>
+		<onEnterBattlefieldFinished>
+			 <Exposed />
+		</onEnterBattlefieldFinished>
 	</BaseMethods>
 
 	<CellMethods>

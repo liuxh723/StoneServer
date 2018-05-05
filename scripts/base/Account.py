@@ -134,23 +134,31 @@ class Account(KBEngine.Proxy):
 		self.chooseCG = index
 
 	def reqStopMatch(self):
-		DEBUG_MSG("Account[%i].reqStopMatch!" % (self.id,))
+		DEBUG_MSG("Account[%i].reqStopMatch!" % self.id)
 		KBEngine.globalData["Halls"].reqRemoveMatcher(self)
 
 	def reqCardList(self):
-		DEBUG_MSG("Account[%i].reqCardList!" % (self.id))
+		DEBUG_MSG("Account[%i].reqCardList!" % self.id)
 		self.client.onReqCardList(self.CardList,self.CardGroupList)
 
-	def onMatchSuccess(self,Battlefield):
-		DEBUG_MSG("Account[%i].onMatchSuccess！ Battlefield:[%s]" % (self.id,Battlefield.id))
+	def onMatchSuccess(self, Battlefield, playerID):
+		DEBUG_MSG("Account[%i].onMatchSuccess！ Battlefield:[%s]" % (self.id, Battlefield.id))
 		prarms = {
 			"Battlefield":Battlefield,
-			"Account":self,
+			"Account": self,
 			"NameA": self.Name,
-			"RoleType":self.CardGroupList[self.chooseCG]["RoleType"],
+			"RoleType": self.CardGroupList[self.chooseCG]["RoleType"],
 			"CardList": self.CardGroupList[self.chooseCG]["CardList"],
+			"PlayerIDB": playerID,
 		}
-		self.Avatar = KBEngine.createEntityAnywhere("Avatar",prarms)
+		self.Avatar = KBEngine.createEntityLocally("Avatar",prarms)
+		self.client.onEnterBattlefield()
+
+	def onEnterBattlefieldFinished(self):
+		DEBUG_MSG("Account[%i].onEnterBattlefieldFinished！" % (self.id,))
+		self.giveClientTo(self.Avatar)
+		self.Avatar.onGetClient()
+
 
 
 

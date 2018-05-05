@@ -1,4 +1,7 @@
 <root>
+      <Interfaces>
+		    <Interface>		cardBase		</Interface>
+        </Interfaces>
 	<Properties>
         <Battlefield>
             <Type>ENTITYCALL</Type>
@@ -42,6 +45,9 @@
 	</ClientMethods>
 
 	<BaseMethods>
+        <onGetClient>
+
+        </onGetClient>
 	</BaseMethods>
 
 	<CellMethods>

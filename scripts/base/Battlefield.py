@@ -9,9 +9,9 @@ class Battlefield(KBEngine.Entity):
         self.createCellEntityInNewSpace(None)
 
     def onGetCell(self):
-        DEBUG_MSG("Battlefield Cell created！"% self.id)
-        self.Player0.onMatchSuccess(self.cell)
-        self.Player1.onMatchSuccess(self.cell)
+        DEBUG_MSG("Battlefield[%s] Cell created！"% self.id)
+        self.Player0.onMatchSuccess(self.cell,0)
+        self.Player1.onMatchSuccess(self.cell,1)
 
 
 
