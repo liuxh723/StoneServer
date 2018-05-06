@@ -28,7 +28,7 @@ class Avatar(cardBase):
             'avatar': self,
             'playerID':self.playerID
                     }
-        entity = KBEngine.createEntity("Card",self.spaceID,tuple(self.position),tuple(self.direction),params)
+        entity = KBEngine.createEntity("CardInfo",self.spaceID,tuple(self.position),tuple(self.direction),params)
         self.CardEnityList.append(entity)
 
     def creatCardListEntity(self):

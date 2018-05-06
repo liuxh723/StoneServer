@@ -9,7 +9,7 @@
 	<Account hasClient="true"></Account><!-- <Account hasCell="true" hasBase="true" hasClient="true"></Account> -->
 	<Hall/>
 	<Battlefield></Battlefield>
-	<Avatar hsClient = "true"></Avatar>
-	<Card hsClient = "true"></Card>
+	<Avatar hasClient = "true"></Avatar>
+	<CardInfo hasClient = "true"></CardInfo>
 	<!--<CardList hasClient="true"></CardList>-->
 </root>
